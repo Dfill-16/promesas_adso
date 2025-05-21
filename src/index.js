@@ -46,30 +46,57 @@
 
 // ejecutar(bol)
 
-const num = Math.random()
-console.log(num)
+// const num = Math.random()
+// console.log(num)
 
-function Aleatorio(number){
-  return new Promise((resolve, reject) => {
+// function Aleatorio(number){
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if(number >= 0.5){
+//         resolve('El numero es mayor a 0.5, se ejecutó')
+//       } else{
+//         reject('La promesa falló')
+//       }  
+//     }, 3000);
+//   })
+// }
+
+// async function ejecutar(number){
+//   try {
+//     console.log("Ejecutando")
+//     const resultado = await Aleatorio(number)
+//     console.log(resultado)
+//   } catch (error) {
+//     const resultado = await Aleatorio(number)
+//     console.log(resultado)
+//   }
+// }
+
+// ejecutar(num)
+
+const contraseña = "123456"
+
+const promesa = (contraseña) => {
+  return new Promise((resolve, reject)=>{
     setTimeout(() => {
-      if(number >= 0.5){
-        resolve('El numero es mayor a 0.5, se ejecutó')
-      } else{
-        reject('La promesa falló')
-      }  
+      if(contraseña.length < 7){
+        reject('La contraseña debe tener 8 caracteres')
+      } else {
+        resolve('La contraseña cumple con los requisitos')
+      }
     }, 3000);
   })
 }
 
-async function ejecutar(number){
+async function ejecutar(contraseña){
   try {
     console.log("Ejecutando")
-    const resultado = await Aleatorio(number)
+    const resultado = await promesa(contraseña)
     console.log(resultado)
   } catch (error) {
-    const resultado = await Aleatorio(number)
+    const resultado = await promesa(contraseña)
     console.log(resultado)
   }
 }
 
-ejecutar(num)
+ejecutar(contraseña)
