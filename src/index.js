@@ -1,10 +1,8 @@
-
-function descargar() {
-  return new Promise((resolve)=>{
-    setTimeout(()=>{
-      resolve("📁 archivo descargado correctamente")
-    },2000)
-  })
+async function ejecutar() {
+  try {
+    console.log("📁 Descarga en proceso...")
+    const respuesta = await 
+  } catch (error) {
+    
+  }
 }
-
-console.log(descargar().then(console.log))
