@@ -1,18 +1,18 @@
-function descargar() {
+function promesa() {
   return new Promise((resolve)=>{
-    setTimeout(()=>{
-      resolve("📁 archivo descargado correctamente")
-    },2000)
+    setTimeout(() => {
+      resolve('Ejecutada con exito después de 8 segundos')
+    }, 8000);
   })
 }
 
-async function ejecutar() {
+async function ejecutar(){
   try {
-    console.log("📁 Descarga en proceso...")
-    const respuesta = await descargar()
-    console.log(respuesta)
+    console.log("Ejecutando...")
+    const resultado = await promesa()
+    console.log(resultado)
   } catch (error) {
-    console.error("❌ Error al descargar archivo: ",error)
+    console.log("Fallo en la promesa")
   }
 }
 
